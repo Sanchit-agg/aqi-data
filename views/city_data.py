@@ -36,7 +36,7 @@ if "city_value" not in st.session_state:
 city = st.text_input(label='_',value=st.session_state["city_value"], label_visibility='hidden', key= 'city', on_change=session_state)
 
 # Caching the data for faster results
-@st.cache_data
+@st.cache_data(ttl=600)
 def city_data(city):
     if city == '':
         st.error('Please enter a valid input', icon="🚨")
