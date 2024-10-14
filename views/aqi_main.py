@@ -8,7 +8,7 @@ API_KEY = st.secrets['API_KEY']
 
 
 # Function to display Major cities AQI data
-@st.cache_data
+@st.cache_data(ttl=600)
 def api_main():
     # Background color theme
     page_bg_img = """
