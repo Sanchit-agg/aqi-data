@@ -32,7 +32,7 @@ if not city:
 
 
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=600)
 def fetch_and_process_data(city_name):
     API_KEY = st.secrets['API_KEY']
     url = f"http://api.waqi.info/feed/{city_name}/?token={API_KEY}"
